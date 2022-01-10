@@ -1,0 +1,59 @@
+a) SELECT DISTINCT owner FROM pet;
++--------+
+| owner  |
++--------+
+| Harold |
+| Gwen   |
+| Benny  |
+| Diane  |
++--------+
+
+b) SELECT name FROM pet ORDER BY name;
++----------+
+| name     |
++----------+
+| Bowser   |
+| Buffy    |
+| Chirpy   |
+| Claws    |
+| Fang     |
+| Fluffy   |
+| Slim     |
+| Whistler |
++----------+
+
+c) SELECT * FROM pet WHERE death is NULL;
++----------+--------+---------+------+------------+-------+
+| name     | owner  | species | sex  | birth      | death |
++----------+--------+---------+------+------------+-------+
+| Fluffy   | Harold | cat     | f    | 1993-02-04 | NULL  |
+| Claws    | Gwen   | cat     | m    | 1994-03-17 | NULL  |
+| Buffy    | Harold | dog     | f    | 1989-05-13 | NULL  |
+| Fang     | Benny  | dog     | m    | 1990-08-27 | NULL  |
+| Whistler | Gwen   | bird    | NULL | 1997-12-09 | NULL  |
+| Slim     | Benny  | snake   | m    | 1996-04-29 | NULL  |
++----------+--------+---------+------+------------+-------+
+
+d) SELECT owner FROM pet WHERE owner LIKE "H%";
++--------+
+| owner  |
++--------+
+| Harold |
+| Harold |
++--------+
+
+e) SELECT * FROM pet WHERE name LIKE "%ff%";
++--------+--------+---------+------+------------+-------+
+| name   | owner  | species | sex  | birth      | death |
++--------+--------+---------+------+------------+-------+
+| Fluffy | Harold | cat     | f    | 1993-02-04 | NULL  |
+| Buffy  | Harold | dog     | f    | 1989-05-13 | NULL  |
++--------+--------+---------+------+------------+-------+
+
+d) SELECT * FROM pet WHERE name LIKE "____";
++------+-------+---------+------+------------+-------+
+| name | owner | species | sex  | birth      | death |
++------+-------+---------+------+------------+-------+
+| Fang | Benny | dog     | m    | 1990-08-27 | NULL  |
+| Slim | Benny | snake   | m    | 1996-04-29 | NULL  |
++------+-------+---------+------+------------+-------+

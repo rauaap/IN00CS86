@@ -1,0 +1,65 @@
+a) SELECT dept_name FROM departments;
++--------------------+
+| dept_name          |
++--------------------+
+| Customer Service   |
+| Development        |
+| Finance            |
+| Human Resources    |
+| Marketing          |
+| Production         |
+| Quality Management |
+| Research           |
+| Sales              |
++--------------------+
+
+b) SELECT DISTINCT title from titles;
++--------------------+
+| title              |
++--------------------+
+| Senior Engineer    |
+| Staff              |
+| Engineer           |
+| Senior Staff       |
+| Assistant Engineer |
+| Technique Leader   |
+| Manager            |
++--------------------+
+
+c) SELECT MAX(salary) FROM salaries; SELECT MIN(salary) FROM salaries;
++-------------+
+| MAX(salary) |
++-------------+
+|      158220 |
++-------------+
+
++-------------+
+| MIN(salary) |
++-------------+
+|       38623 |
++-------------+
+
+d) SELECT AVG(salary) FROM salaries;
++-------------+
+| AVG(salary) |
++-------------+
+|  63810.7448 |
++-------------+
+
+e) SELECT * FROM employees WHERE last_name = 'Facello';
+Kyselyn vastaus oli 186 riviä, joten jätin sen pois. 
+
+f) SELECT COUNT(*) FROM employees WHERE '1950-01-01' <= birth_date < '1960-01-01';
++----------+
+| COUNT(*) |
++----------+
+|   300024 |
++----------+
+
+d) SELECT gender, count(*) FROM employees GROUP BY gender;
++--------+----------+
+| gender | count(*) |
++--------+----------+
+| M      |   179973 |
+| F      |   120051 |
++--------+----------+
