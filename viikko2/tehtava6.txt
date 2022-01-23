@@ -1,0 +1,38 @@
+a) SELECT * FROM employees ORDER BY last_name LIMIT 10;
+
+b) SELECT * FROM employees ORDER BY last_name, first_name LIMIT 10;
+
+c) SELECT * FROM employees ORDER BY hire_date DESC limit 5;
+
+d) SELECT * FROM employees JOIN salaries ON salaries.emp_no = employees.emp_no AND salaries.to_date='9999-01-01' order by salary desc limit 1;
+
+e) SELECT * FROM employees JOIN salaries ON salaries.emp_no = employees.emp_no AND salaries.to_date='9999-01-01' order by salary asc limit 1;
+
+f) SELECT * FROM employees JOIN salaries ON salaries.emp_no = employees.emp_no AND salaries.to_date = '9999-01-01' WHERE salary > 150000;
+
+g)
+SELECT COUNT(*) FROM employees
+JOIN dept_emp ON employees.emp_no = dept_emp.emp_no AND to_date='9999-01-01'
+JOIN departments ON dept_emp.dept_no=departments.dept_no
+WHERE dept_name='Sales';
+
+SELECT COUNT(*) FROM employees
+JOIN dept_emp ON employees.emp_no = dept_emp.emp_no AND to_date='9999-01-01'
+JOIN departments ON dept_emp.dept_no=departments.dept_no
+WHERE dept_name='Marketing';
+
+h)
+SELECT first_name, last_name, dept_name FROM employees
+JOIN dept_manager ON dept_manager.emp_no = employees.emp_no AND dept_manager.to_date = '9999-01-01'
+JOIN departments ON departments.dept_no = dept_manager.dept_no;
+
+i)
+SELECT AVG(salary) FROM salaries
+JOIN dept_emp ON salaries.emp_no = dept_emp.emp_no AND salaries.to_date='9999-01-01'
+JOIN departments ON departments.dept_no = dept_emp.dept_no
+WHERE dept_name='Sales';
+
+SELECT AVG(salary) FROM salaries
+JOIN dept_emp ON salaries.emp_no = dept_emp.emp_no AND salaries.to_date='9999-01-01'
+JOIN departments ON departments.dept_no = dept_emp.dept_no
+WHERE dept_name='Marketing';

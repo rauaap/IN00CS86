@@ -1,0 +1,29 @@
+CREATE TABLE owner (
+    first_name varchar(255),
+    last_name varchar(255),
+    address varchar(255),
+    ownerID int PRIMARY KEY AUTO_INCREMENT
+);
+
+desc owner;
+
+ALTER TABLE pet DROP COLUMN owner;
+ALTER TABLE pet ADD COLUMN petID INT PRIMARY KEY AUTO_INCREMENT;
+ALTER TABLE pet ADD COLUMN ownerID INT;
+ALTER TABLE pet ADD CONSTRAINT FOREIGN KEY(ownerID) REFERENCES owner(ownerID);
+
+desc pet;
+
+INSERT INTO owner (first_name, last_name, address, ownerID) VALUES
+    ('Harold', 'Lloyd', 'Someaddress 1', NULL),
+    ('Gwen', 'Stefani', 'Someaddress 2', NULL),
+    ('Benny', 'Hill', 'Someaddress 3', NULL),
+    ('Diane', 'Keaton', 'Someaddress 4', NULL)
+;
+
+UPDATE pet SET ownerID=1 WHERE name='Fluffy' OR name='Buffy';
+UPDATE pet SET ownerID=2 WHERE name='Claws';
+UPDATE pet SET ownerID=3 WHERE name='Fang';
+UPDATE pet SET ownerID=4 WHERE name='Bowser';
+UPDATE pet SET ownerID=2 WHERE name='Chirpy' OR name='Whistler';
+UPDATE pet SET ownerID=3 WHERE name='Slim';
