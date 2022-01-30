@@ -22,6 +22,6 @@ WHERE Opiskelija.Etunimi = 'Paavo' AND Opiskelija.Sukunimi = 'Pasianssi';
 
 
 5)
-SELECT Opintojakso.Nimi from Opintojakso
+SELECT Opintojakso.Nimi FROM Opintojakso
 LEFT JOIN Arviointi ON Opintojakso.idOpintojakso = Arviointi.idOpintojakso
 WHERE idArviointi IS NULL;
